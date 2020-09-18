@@ -18,4 +18,10 @@ ws.on("request", (request) => {
     console.log(`Received message is: ${message.utf8Data}`);
     connection.send("Hey client. Just received your shit!");
   });
+  sendNumbers();
 });
+
+function sendNumbers() {
+  connection.send(`Time to receive your lottery moneyyy: ${Math.random()}`);
+  setTimeout(sendNumbers, 5000);
+}
